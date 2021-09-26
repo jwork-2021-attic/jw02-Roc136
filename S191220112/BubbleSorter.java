@@ -1,16 +1,16 @@
 package S191220112;
 
-// TODO: other two sorters
+// DONE: other two sorters
 public class BubbleSorter implements Sorter {
 
-    private int[] a;
+    protected int[] a;
 
     @Override
     public void load(int[] a) {
         this.a = a;
     }
 
-    private void swap(int i, int j) {
+    protected void swap(int i, int j) {
         int temp;
         temp = a[i];
         a[i] = a[j];
@@ -18,7 +18,7 @@ public class BubbleSorter implements Sorter {
         plan += "" + a[i] + "<->" + a[j] + "\n";
     }
 
-    private String plan = "";
+    protected String plan = "";
 
     @Override
     public void sort() {
