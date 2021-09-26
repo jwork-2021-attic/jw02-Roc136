@@ -1,31 +1,51 @@
 package S191220112;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import javax.imageio.ImageIO;
+
 import S191220112.Line.Position;
 
 public class Gourds {
 
     private static Gourds theGourdManger;
     private static Gourd[] gourds;
+    private static List<Integer> randomList;
     private static int index;
 
     // number 写 8 或 16
-    public static void initGourds(int number) {
+    public static void initGourds(int number) throws IOException {
         if (theGourdManger == null) {
             theGourdManger = new Gourds();
         }
+
+        File file=new File("c256.png");
+        BufferedImage bufImage=ImageIO.read(file);
+
         gourds = new Gourd[number*number];
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++){
                 int rank, r, g, b;
                 rank = i * number + j + 1;
-                // TODO : cal rgb
-                g = 256 / number * i;
-                b = 256 / number * j;
-                r = (g + b) / 2;
+                // DONE : cal rgb
+                int rgb = bufImage.getRGB((int)(j * 35.75 + 13.375), (int)(i * 26.75 + 13.375));
+                
+                r = (rgb >> 16) & 0xFF;
+                g = (rgb >> 8) & 0xFF;
+                b = rgb & 0xFF;
+
                 gourds[rank - 1] = theGourdManger.new Gourd(r, g, b, rank);
             }
         }
-        index = 1;
+        index = 0;
+        randomList = IntStream.rangeClosed(0, number * number - 1).boxed().collect(Collectors.toList());
+        Collections.shuffle(randomList);
     }
     
     public static Gourd getGourdByRank(int rank) {
@@ -39,7 +59,7 @@ public class Gourds {
 
     public static Gourd getRandom() {
         index = (index + 1) % gourds.length;
-        return gourds[index];
+        return gourds[randomList.get(index)];
     }
     
     public class Gourd implements Linable {
@@ -65,7 +85,8 @@ public class Gourds {
         @Override
         public String toString() {
             String text = "   ";
-            if (true) {
+            boolean showNum = false;
+            if (showNum) {
                 text = String.format("  %03d  ", this.rank());
             }
             return "\033[48;2;" + this.r + ";" + this.g + ";" + this.b + ";38;2;0;0;0m" + text + "\033[0m";
