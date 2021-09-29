@@ -37,12 +37,8 @@
 
 **由于快速排序录制结果文件太大无法上传，所以使用64个“小妖”来做**
 
-<video id="video" controls="" preload="none" poster="https://asciinema.org/a/TFWlWZtlv3iV4aozGnRfkR9PR.svg">
-      <source id="mp4" src="https://asciinema.org/a/TFWlWZtlv3iV4aozGnRfkR9PR" type="video/mp4">
-</videos>
+[![asciicast](https://asciinema.org/a/438868.svg)](https://asciinema.org/a/438868)
 
 ##### 2）选择排序
 
-<video id="video" controls="" preload="none" poster="https://asciinema.org/a/dhiXwensvSRzfbVLf4WKDg6nL.svg">
-      <source id="mp4" src="https://asciinema.org/a/dhiXwensvSRzfbVLf4WKDg6nL" type="video/mp4">
-</videos>
+[![asciicast](https://asciinema.org/a/438173.svg)](https://asciinema.org/a/438173)
