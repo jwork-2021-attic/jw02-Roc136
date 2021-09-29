@@ -1,0 +1,110 @@
+@startuml character2
+
+interface Sorter {
+    + load()
+    + sort()
+    + getPlan()
+}
+
+class BubbleSorter {
+    # int[] a
+    # String plan
+    
+    # swap()
+    + load() <<override>>
+    + sort() <<override>>
+    + getPlan() <<override>>
+}
+
+BubbleSorter --|> Sorter
+
+class QuickSorter {
+    + sort() <<override>>
+    - quickSort()
+    - partition()
+}
+
+QuickSorter --|> BubbleSorter
+
+class SelectSorter {
+    + sort() <<override>>
+    - selectMaxIndex()
+}
+
+SelectSorter --|> BubbleSorter
+
+class Geezer {
+    - {static} Geezer theGeezer
+    - Sorter Sorter
+
+    - Geezer()
+    - parsePlan()
+    - execute()
+    + getTheGeezer()
+    + setSorter()
+    + lineUp()
+}
+
+interface Linable {
+    + setPosition()
+    + getPosition()
+    + getValue()
+}
+
+class Sprites {
+    - {static} Sprites theSpriteManger;
+    - {static} Sprite[] sprites;
+    - {static} List<Integer> randomList;
+    - {static} int index;
+
+    + initSprites()
+    + getSpriteByRank()
+    + getRandom()
+}
+
+class Sprite {
+    - int r,b,c
+    - Position position
+
+    + rank()
+    + toString() <<override>>
+    + setPosition() <<override>>
+    + getPosition() <<override>>
+    + swapPosition()
+    + getValue() <<override>>
+}
+
+Sprite --|> Linable
+
+interface Set {
+    + put()
+    + get()
+    + toArray()
+}
+
+class Line {
+    - Position[] positions
+
+    + put() <<override>>
+    + get() <<override>>
+    + toArray() <<override>>
+    + toString() <<override>>
+}
+
+Line --|> Set
+
+class Position {
+    - Linable linable
+
+    + setLinable()
+}
+
+Set +-- Position
+Geezer o-- Sorter
+Sprite --> Position
+Sprites +-- Sprite
+
+Geezer ..> Set
+Set ..> Linable
+
+@enduml

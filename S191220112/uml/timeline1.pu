@@ -1,0 +1,36 @@
+@startuml timeline1
+
+actor   老爷爷  as  theGeezer
+actor   大娃    as  ONE #Red
+actor   二娃    as  TWO #Orange
+actor   三娃    as  THREE   #Yellow
+actor   四娃    as  FOUR    #Green
+actor   五娃    as  FIVE    #Grey
+actor   六娃    as  SIX #Blue
+actor   七娃    as  SEVEN   #Purple
+entity  排序方法    as  sorter
+entity  队伍    as  line
+
+ONE -[#Grey]-> line : 进入
+note right: 6号位
+TWO -[#Grey]-> line : 进入
+note right: 3号位
+THREE -[#Grey]-> line : 进入
+note right: 1号位
+FOUR -[#Grey]-> line : 进入
+note right: 5号位
+FIVE -[#Grey]-> line : 进入
+note right: 2号位
+SIX -[#Grey]-> line : 进入
+note right: 4号位
+SEVEN -[#Grey]-> line : 进入
+note right: 0号位
+
+theGeezer -[#Green]-> theGeezer : 出现
+
+theGeezer -[#Green]-> sorter : 选择
+note left: 冒泡排序
+
+theGeezer -[#Grey]-> line : 排序
+
+@enduml
