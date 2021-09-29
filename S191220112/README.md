@@ -42,3 +42,21 @@
 ##### 2）选择排序
 
 [![asciicast](https://asciinema.org/a/438173.svg)](https://asciinema.org/a/438173)
+
+### Task 3
+
+#### 类图：
+
+![character3](http://www.plantuml.com/plantuml/svg/ZLLDRzim3BthLmZOfKFhNdPiO7Iz30KQe6ksNOOT59bBXRgo9ybRkgx_VRH5ol9i5miGX28fyZr-A9S-A1UwnrhgU-MK3k3U2M4i_dvN6kIkSIZAPo7nSohhHbKdR-dWqPOE1mYtjR9uVX52ryfxUTNjzpLC8hoH6FhhDwdej0lEs8DiyUQW8RN_fTeKEUQKcqtp4vmp5PJb1C2I9Q6P6X7Q15HH_2c98eF-s1dzy0_hjJo5_C7UXBQGBPRJ1DDG9V9mGxOyF-VSGGqw_7TIFxXlrV7QLd2CUIOXLXDz0FYTKXJo6PiVZ7vXVRY7A96Tmd6Cg8mUELyFrFceWIFeBa0-6Pyuy3WxG637DXiBdzl8Pfo_6sCLqXYhWerjF1TuRFQ2xekgEyZdSTSw4y3FwRC1-KTng-m1tCMo7uwlZnTc3ZV6XyqrWiVRfNJALirZhviv8a7yOlSk104srWJ2aPE8ggkdEsKVSltT47lEBf7hCxYp_PccCrT8jYHmOfT73atSo9LzomkzjdQlElIB_KglPjjAf8Q1fb6Ol4uGqcIqtUGnoYYzTquzvQNQAYHvJALYGDXOBeuNUTGLgik6b6_Pk5nVX4QWufC4WR6clZ5QteYQov5wGnP-488yBKPoWdQyANYln-AMenUlGdyroe9ldfz7O7taNaxzk0HRuJ_8Nm00 "character3")
+
+#### 可视化结果：
+
+##### 1）快速排序
+
+**由于快速排序录制结果文件太大无法上传，所以使用64个“小妖”来做**
+
+[![asciicast](https://asciinema.org/a/438869.svg)](https://asciinema.org/a/438869)
+
+##### 2）选择排序
+
+[![asciicast](https://asciinema.org/a/438177.svg)](https://asciinema.org/a/438177)

@@ -8,12 +8,12 @@ public class Scene {
 
     public static void main(String[] args) throws IOException {
 
-        int test_size = 16;
+        int test_size = 8;
 
         Sprites.initSprites(test_size);
 
-        Set set = new Line(test_size * test_size);
-        // Set set = new Matrix(test_size);
+        // Set set = new Line(test_size * test_size);
+        Set set = new Matrix(test_size);
         
         for (int i = 0; i < test_size*test_size; i++)
         {
