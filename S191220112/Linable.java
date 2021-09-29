@@ -1,6 +1,6 @@
 package S191220112;
 
-import S191220112.Line.Position;
+import S191220112.Set.Position;
 
 public interface Linable {
 

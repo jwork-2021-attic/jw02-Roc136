@@ -21,7 +21,7 @@ public class Geezer {
         this.sorter = sorter;
     }
 
-    public String lineUp(Line line) {
+    public String lineUp(Set set) {
 
         String log = new String();
 
@@ -29,7 +29,7 @@ public class Geezer {
             return null;
         }
 
-        Linable[] linables = line.toArray();
+        Linable[] linables = set.toArray();
         int[] ranks = new int[linables.length];
 
         for (int i = 0; i < linables.length; i++) {
@@ -44,8 +44,8 @@ public class Geezer {
         if (sortSteps != null) {
             for (String step : sortSteps) {
                 this.execute(step);
-                System.out.println(line.toString());
-                log += line.toString();
+                System.out.println(set.toString());
+                log += set.toString();
                 log += "\n[frame]\n";
             }
         }
@@ -63,8 +63,8 @@ public class Geezer {
 
     private void execute(String step) {
         String[] couple = step.split("<->");
-        Gourds.getGourdByRank(Integer.parseInt(couple[0]))
-                .swapPosition(Gourds.getGourdByRank(Integer.parseInt(couple[1])));
+        Sprites.getSpriteByRank(Integer.parseInt(couple[0]))
+                .swapPosition(Sprites.getSpriteByRank(Integer.parseInt(couple[1])));
     }
 
 }

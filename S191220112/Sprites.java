@@ -10,25 +10,25 @@ import java.util.stream.IntStream;
 
 import javax.imageio.ImageIO;
 
-import S191220112.Line.Position;
+import S191220112.Set.Position;
 
-public class Gourds {
+public class Sprites {
 
-    private static Gourds theGourdManger;
-    private static Gourd[] gourds;
+    private static Sprites theSpriteManger;
+    private static Sprite[] sprites;
     private static List<Integer> randomList;
     private static int index;
 
     // number 写 8 或 16
-    public static void initGourds(int number) throws IOException {
-        if (theGourdManger == null) {
-            theGourdManger = new Gourds();
+    public static void initSprites(int number) throws IOException {
+        if (theSpriteManger == null) {
+            theSpriteManger = new Sprites();
         }
 
         File file=new File("c256.png");
         BufferedImage bufImage=ImageIO.read(file);
 
-        gourds = new Gourd[number*number];
+        sprites = new Sprite[number*number];
         for (int i = 0; i < number; i++) {
             for (int j = 0; j < number; j++){
                 int rank, r, g, b;
@@ -40,7 +40,7 @@ public class Gourds {
                 g = (rgb >> 8) & 0xFF;
                 b = rgb & 0xFF;
 
-                gourds[rank - 1] = theGourdManger.new Gourd(r, g, b, rank);
+                sprites[rank - 1] = theSpriteManger.new Sprite(r, g, b, rank);
             }
         }
         index = 0;
@@ -48,21 +48,21 @@ public class Gourds {
         Collections.shuffle(randomList);
     }
     
-    public static Gourd getGourdByRank(int rank) {
+    public static Sprite getSpriteByRank(int rank) {
     
-        if (rank <= gourds.length) {
-            return gourds[rank - 1];
+        if (rank <= sprites.length) {
+            return sprites[rank - 1];
         }
         return null;
 
     }
 
-    public static Gourd getRandom() {
-        index = (index + 1) % gourds.length;
-        return gourds[randomList.get(index)];
+    public static Sprite getRandom() {
+        index = (index + 1) % sprites.length;
+        return sprites[randomList.get(index)];
     }
     
-    public class Gourd implements Linable {
+    public class Sprite implements Linable {
 
         private final int r;
         private final int g;
@@ -71,7 +71,7 @@ public class Gourds {
     
         private Position position;
     
-        Gourd(int r, int g, int b, int rank) {
+        Sprite(int r, int g, int b, int rank) {
             this.r = r;
             this.g = g;
             this.b = b;
@@ -102,7 +102,7 @@ public class Gourds {
             return this.position;
         }
     
-        public void swapPosition(Gourd another) {
+        public void swapPosition(Sprite another) {
             Position p = another.position;
             this.position.setLinable(another);
             p.setLinable(this);
